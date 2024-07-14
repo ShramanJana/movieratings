@@ -3,6 +3,7 @@ package dev.shraman.movies.data;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,6 +21,7 @@ public class User implements UserDetails {
     @Id
     private ObjectId id;
 
+    @Indexed(unique = true)
     private String username;
     private String password;
 

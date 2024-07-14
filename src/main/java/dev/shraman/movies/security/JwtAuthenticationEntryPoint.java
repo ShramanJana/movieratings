@@ -14,6 +14,6 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException {
-        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Access Denied!!");
+        response.sendError(HttpServletResponse.SC_NOT_FOUND, "Invalid Username!!");
     }
 }
